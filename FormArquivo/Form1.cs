@@ -116,5 +116,21 @@ namespace FormArquivo
             
             lblSelecao.Text = selecao.ToString("C");
         }
+
+        private void materialButton1_Click(object sender, EventArgs e)
+        {
+            for(int i = dgvDespesas.RowCount - 1; i >- 0; i--)
+            {
+                if (Convert.ToBoolean(dgvDespesas.Rows[i].Cells[0].Value) == true)
+                {
+                    selecao -= Convert.ToDouble(dgvDespesas.Rows[i].Cells[3].Value);
+                    total -= Convert.ToDouble(dgvDespesas.Rows[i].Cells[3].Value);
+                    dgvDespesas.Rows.Remove(dgvDespesas.Rows[i]);
+                }
+            }
+
+            lblSelecao.Text = selecao.ToString("C");
+            lblTotal.Text = total.ToString("C");
+        }
     }
 }
