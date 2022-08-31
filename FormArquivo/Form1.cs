@@ -119,7 +119,7 @@ namespace FormArquivo
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            for(int i = dgvDespesas.RowCount - 1; i >- 0; i--)
+            for(int i = dgvDespesas.RowCount - 1; i >= 0; i--)
             {
                 if (Convert.ToBoolean(dgvDespesas.Rows[i].Cells[0].Value) == true)
                 {
